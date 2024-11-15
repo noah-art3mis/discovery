@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+What is
+#  AI SAFETY
+
+by Gustavo Costa
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+The way we think about AI is wrong
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 1
+#### Why this matters
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241113153544.png" alt="" style="object-fit: scale-down">
+
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241113153646.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241113153852.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241113153955.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241113154301.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Disruption
+
+Education
+
+Healthcare
+
+Employment
+
+Art
+
+War
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+You are already involved
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 2
+### What is going on
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> Superintelligence will be the most significant development in human history.
+> 
+> ...Fixing the climate, establishing a space colony, and the discovery of all of physics...
+> 
+> — Sam Altman,  [CEO of OpenAI](https://ia.samaltman.com/)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> Deep learning works, and we will solve the remaining problems.
+> 
+> — Sam Altman,  [CEO of OpenAI](https://ia.samaltman.com/)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Blindspot
+
+| Natural Science | Social Science |
+| --------------- | -------------- |
+| AI Safety       | ?              |
+</div>
+
+<aside class="notes"><p>narrow view. / computer scientists in the last 50 years have a particular framing / things are different now</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- Discrimination
+- Privacy
+- Disinformation
+- Surveillance
+- Automation
+- Factuality
+- Reasoning
+- Understanding
+- Human values
+- Consciousness
+- Algorithmic bias
+- Privacy
+- Accountability
+- Alignment
+- Governance
+- Social impact
+- Monopoly
+- Intellectual property
+- Surveillance
+- National security
+- Automation
+- Labour disrupution
+- Deepfakes
+- Resource consumption
+- Environmental impact
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Wicked problems or just inappropriate tools?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+| Natural Science | Social Science |
+| --------------- | -------------- |
+| AI Safety       | AI Ethics      |
+| Facts           | Values         |
+| Technical       | Social         |
+| Resolution      | Negotiation    |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+The solution is
+### Interdisciplinarity
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Philosophy: [Debunking Robot Rights Metaphysically, Ethically, and Legally](https://arxiv.org/abs/2404.10072)
+
+Linguistics: [Language (Technology) is Power: A Critical Survey of “Bias” in NLP](https://aclanthology.org/2020.acl-main.485/)
+
+Sociology: [AI Safety Needs Social Scientists](https://distill.pub/2019/safety-needs-social-scientists/)
+
+Ecology: [ Making AI Less "Thirsty"](https://arxiv.org/abs/2304.03271)
+
+Cultural studies:  [The unseen Black faces of AI algorithms](https://www.nature.com/articles/d41586-022-03050-7)
+
+Management:  [80% of AI projects fail](https://www.tomshardware.com/tech-industry/artificial-intelligence/research-shows-more-than-80-of-ai-projects-fail-wasting-billions-of-dollars-in-capital-and-resources-report)
+
+Political science: [Deepfakes did not impact election](https://www.turing.ac.uk/news/no-evidence-ai-disinformation-or-deepfakes-impacted-uk-french-or-european-elections-results)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 3
+### What to do
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+| Natural Science | Social Science |
+| --------------- | -------------- |
+| AI Safety       | AI Ethics      |
+</div>
+
+<aside class="notes"><p>confrontational and reductive</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Synthesis
+
+|              AI Studies              |
+| :----------------------------------: |
+| AI safety & ethics & everything else |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241115113951.png" alt="" style="object-fit: scale-down">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241115113934.png" alt="" style="object-fit: scale-down">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241115113920.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### do not reinvent the wheel
+
+- [Ethics of artificial intelligence - Wikipedia](https://en.wikipedia.org/wiki/Ethics_of_artificial_intelligence)
+- [Science and technology studies - Wikipedia](https://en.wikipedia.org/wiki/Science_and_technology_studies)
+- [Science studies - Wikipedia](https://en.wikipedia.org/wiki/Science_studies)
+- [Social informatics - Wikipedia](https://en.wikipedia.org/wiki/Social_informatics)
+- [Technology and society - Wikipedia](https://en.wikipedia.org/wiki/Technology_and_society)
+- [Social construction of technology - Wikipedia](https://en.wikipedia.org/wiki/Social_construction_of_technology)
+- [Algorithmic bias - Wikipedia](https://en.wikipedia.org/wiki/Algorithmic_bias)
+- [Algorithmic transparency - Wikipedia](https://en.wikipedia.org/wiki/Algorithmic_transparency)
+- [Algorithmic accountability - Wikipedia](https://en.wikipedia.org/wiki/Algorithmic_accountability)
+- [Regulation of algorithms - Wikipedia](https://en.wikipedia.org/wiki/Regulation_of_algorithms)
+- [Regulation of artificial intelligence - Wikipedia](https://en.wikipedia.org/wiki/Regulation_of_artificial_intelligence)
+- [Explainable artificial intelligence - Wikipedia](https://en.wikipedia.org/wiki/Explainable_artificial_intelligence)
+- [Right to explanation - Wikipedia](https://en.wikipedia.org/wiki/Right_to_explanation)
+- [Digital rights - Wikipedia](https://en.wikipedia.org/wiki/Digital_rights)
+- [Automated decision-making - Wikipedia](https://en.wikipedia.org/wiki/Automated_decision-making)
+- [Machine ethics - Wikipedia](https://en.wikipedia.org/wiki/Machine_ethics)
+- [Computer ethics - Wikipedia](https://en.wikipedia.org/wiki/Computer_ethics)
+- [Programming ethics - Wikipedia](https://en.wikipedia.org/wiki/Programming_ethics)
+- [Fairness (machine learning) - Wikipedia](https://en.wikipedia.org/wiki/Fairness_(machine_learning))
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### do not reinvent the wheel
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241113161953.png" alt="" style="object-fit: scale-down">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241113162228.png" alt="" style="object-fit: scale-down">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241113162022.png" alt="" style="object-fit: scale-down">
+
+<img src="_LIS/1. Discovery/Assignment 2/static/Pasted image 20241113162259.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 4.
+### In conclusion
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+The culture around AI needs to change
+</div>
+
+<aside class="notes"><p>ai is not computer scientists in their basement doing mathematics and dreaming about the future. This is my proposal</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+What is
+# ~~AI SAFETY~~ 
+# ~~AI ETHICS~~ 
+# AI STUDIES
+
+By Gustavo Costa
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+[Website](https://simulacro.co.uk/) | [LinkedIn](https://www.linkedin.com/in/gustavoarcos/) | [GitHub](https://github.com/noah-art3mis)
+
+Slides: 
+
+<img src="_LIS/1. Discovery/Assignment 2/static/qr.png" alt="" style="object-fit: scale-down">
+
+
+https://github.com/noah-art3mis/discovery/blob/main/Capstone1_assessment1_24000114067.md
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Resources
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Institutions:
+- [FAccT - ACM Conference on Fairness, Accountability, and Transparency](https://facctconference.org/)
+- [Montreal AI Ethics Institute](https://montrealethics.ai/dictionary/)
+- [Data and Society](https://datasociety.net/)
+- [Home - AI Now Institute](https://ainowinstitute.org/)
+- [Ada Lovelace Institute](https://www.adalovelaceinstitute.org/)
+- [AI & SOCIETY](https://link.springer.com/journal/146)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Books
+
+-  [Artificial Intelligence: A Guide for Thinking Humans (Pelican Books): Amazon.co.uk: Mitchell, Melanie: 9780241404829: Books](https://www.amazon.co.uk/Artificial-Intelligence-Thinking-Humans-Pelican/dp/0241404827)
+-  [AI Snake Oil: What Artificial Intelligence Can Do, What It Can’t, and How to Tell the Difference: Amazon.co.uk: Narayanan, Arvind, Kapoor, Sayash: 9780691249131: Books](https://www.amazon.co.uk/Snake-Oil-Artificial-Intelligence-Difference/dp/069124913X)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+AI Research
+-  [dl.acm.org/doi/pdf/10.1145/3531146.3533088](https://dl.acm.org/doi/pdf/10.1145/3531146.3533088)
+- [\[2406.13843\] Generative AI Misuse: A Taxonomy of Tactics and Insights from Real-World Data](https://arxiv.org/abs/2406.13843)
+-  [Constitutional AI: Harmlessness from AI Feedback \\ Anthropic](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
+- [eleosai.org/papers/20241030\_Taking\_AI\_Welfare\_Seriously\_web.pdf](https://eleosai.org/papers/20241030_Taking_AI_Welfare_Seriously_web.pdf)
+- [\[2303.12712\] Sparks of Artificial General Intelligence: Early experiments with GPT-4](https://arxiv.org/abs/2303.12712)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+AI Research
+- [Constitutional AI: Harmlessness from AI Feedback \\ Anthropic](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
+- [Embers of autoregression show how large language models are shaped by the problem they are trained to solve | PNAS](https://www.pnas.org/doi/10.1073/pnas.2322420121)
+- [2404.10072](https://arxiv.org/pdf/2404.10072)
+- [Language (Technology) is Power: A Critical Survey of “Bias” in NLP - ACL Anthology](https://aclanthology.org/2020.acl-main.485/)
+- [AI Safety Needs Social Scientists](https://distill.pub/2019/safety-needs-social-scientists/)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+AI Research
+- [\[2304.03271\] Making AI Less "Thirsty": Uncovering and Addressing the Secret Water Footprint of AI Models](https://arxiv.org/abs/2304.03271)
+- [The unseen Black faces of AI algorithms](https://www.nature.com/articles/d41586-022-03050-7)
+- [Research shows more than 80% of AI projects fail, wasting billions of dollars in capital and resources: Report | Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/research-shows-more-than-80-of-ai-projects-fail-wasting-billions-of-dollars-in-capital-and-resources-report)
+- [No evidence that AI disinformation or deepfakes impacted UK, French or European elections results | The Alan Turing Institute](https://www.turing.ac.uk/news/no-evidence-ai-disinformation-or-deepfakes-impacted-uk-french-or-european-elections-results)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Techno-optimism
+-  [The Intelligence Age](https://ia.samaltman.com/)
+-  [Dario Amodei — Machines of Loving Grace](https://darioamodei.com/machines-of-loving-grace)
+- [The Techno-Optimist Manifesto | Andreessen Horowitz](https://a16z.com/the-techno-optimist-manifesto/)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+AI News
+- [Press release: The Nobel Prize in Physics 2024 - NobelPrize.org](https://www.nobelprize.org/prizes/physics/2024/press-release/)
+- [Press release: The Nobel Prize in Chemistry 2024 - NobelPrize.org](https://www.nobelprize.org/prizes/chemistry/2024/press-release/)
+- [Three Mile Island nuclear reactor to restart to power Microsoft AI operations | Nuclear power | The Guardian](https://www.theguardian.com/environment/2024/sep/20/three-mile-island-nuclear-plant-reopen-microsoft)
+- [Google to buy nuclear power for AI datacentres in ‘world first’ deal | Google | The Guardian](https://www.theguardian.com/technology/2024/oct/15/google-buy-nuclear-power-ai-datacentres-kairos-power)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+AI News
+- [Argentina will use AI to ‘predict future crimes’ but experts worry for citizens’ rights | Argentina | The Guardian](https://www.theguardian.com/world/article/2024/aug/01/argentina-ai-predicting-future-crimes-citizen-rights)
+- [The Bletchley Declaration by Countries Attending the AI Safety Summit, 1-2 November 2023 - GOV.UK](https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023)
+- [Memorandum on Advancing the United States’ Leadership in Artificial Intelligence; Harnessing Artificial Intelligence to Fulfill National Security Objectives; and Fostering the Safety, Security, and Trustworthiness of Artificial Intelligence | The White House](https://www.whitehouse.gov/briefing-room/presidential-actions/2024/10/24/memorandum-on-advancing-the-united-states-leadership-in-artificial-intelligence-harnessing-artificial-intelligence-to-fulfill-national-security-objectives-and-fostering-the-safety-security/)
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"fade","transitionSpeed":"fast"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
