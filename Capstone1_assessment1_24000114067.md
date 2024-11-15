@@ -222,9 +222,9 @@ By Gustavo Costa
 
 Slides: 
 
-![[_LIS/1. Discovery/Assignment 2/static/qr.png]]
+![[_LIS/1. Discovery/Assignment 2/static/qr2.png]]
 
-https://github.com/noah-art3mis/discovery/blob/main/Capstone1_assessment1_24000114067.md
+https://github.com/noah-art3mis/discovery/
 
 ---
 ## Resources
